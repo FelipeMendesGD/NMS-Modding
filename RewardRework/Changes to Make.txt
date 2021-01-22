@@ -1,0 +1,12 @@
+Changed
+0.1
+--Sentinel Ship new rewards : Any Frigate Boosters
+--Sentinel Drone new Reward: Suspicious Packet (Weaponry)
+--Sentinel Quad new Reward: Suspicious Packet (Technology)
+--Sentinel Walker new Reward: Suspicious Packet (Technology)
+0.2
+--Missions and Freighter Rescue reward 1-5 Guild Standing
+--Freighter Rescue new Rewards: 1x Salvaged Frigate Module, 1x Cargo Bulkhead,  1-3x Frigate Fuel (200 TONNES ),RNG Chance for Freighter Tech Modules
+0.3
+--Pirate Ships new rewards : X Class Ship Modules
+--Now you can easily turn each loot group on/off by changing the variables at the beginning of the LUA file to true/false (Must Build it again by using AMUMSS)
