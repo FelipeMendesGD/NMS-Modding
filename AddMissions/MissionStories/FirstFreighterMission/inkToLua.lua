@@ -8,6 +8,8 @@ local function slurp(path)
     return s
 end
 
+--story = json.decode(slurp("FirstFreighterMission.json"))
 story = json.decode(slurp(arg[1]))
+
 
 print(assert(inspect(story)))
