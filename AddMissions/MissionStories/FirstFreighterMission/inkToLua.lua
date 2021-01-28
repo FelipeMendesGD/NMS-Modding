@@ -1,4 +1,3 @@
-#!/usr/bin/lua
 json = require "json"
 inspect = require "inspect"
 
@@ -9,7 +8,6 @@ local function slurp(path)
     return s
 end
 
-story = json.decode(slurp("story.json"))
+story = json.decode(slurp(arg[1]))
 
 print(assert(inspect(story)))
-
