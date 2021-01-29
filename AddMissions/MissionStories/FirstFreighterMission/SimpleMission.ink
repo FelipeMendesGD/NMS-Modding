@@ -1,11 +1,7 @@
 VAR mission_name = "The crashed freighter"
-VAR MissionObjective = "Explore the fate of the crashed freighter."
-VAR MissionSubtitles = "Explore the crashed freighter."
+
 VAR ObjectNeeded = "SalvagedFrigateModule"
 VAR ObjectNeededIsInInventory = "false"
-
-VAR CurrentMissionStage = -> mission_pickup
-VAR NextMissionStage = -> mission_start
 
 VAR FlyingInSpace = true
 VAR HasPerformedScan = true
@@ -17,7 +13,8 @@ VAR ExosuitAction = ""
 VAR CommMessage = ""
 
 
--> CurrentMissionStage
+
+-> mission_pickup
 
 == mission_pickup ==
 { mission_name }
@@ -28,7 +25,7 @@ The mission agent shuffles nervously as I examine the mission details.
 
 
 + [Accept the mission]
-    -> NextMissionStage
+    -> mission_start
     
 + [Leave]
     -> dont_start_mission
@@ -36,24 +33,13 @@ The mission agent shuffles nervously as I examine the mission details.
 
 
 == mission_start ==
-~ CurrentMissionStage = NextMissionStage
-~ NextMissionStage = "space_encounter"
-{ FlyingInSpace && HasPerformedScan:
-~ NextMissionStage = space_encounter
 -> space_encounter
-}
+
 
 == space_encounter ==
-~ CurrentMissionStage = space_encounter
-~ NextMissionStage = found_freighter
-
-~ CommMessage = " Alert, incoming navigational data "
-{ CommMessage }
 -> found_freighter
 
 == found_freighter ==
-~ CurrentMissionStage = found_freighter
-~ NextMissionStage = return_to_mission_board
 
 As I land next to the freighter, it is clear that is has made its last trip.  Debris is scatered everywhere and  the warp engines are torn to shreds by the emergency warp core ejection.
 
@@ -72,7 +58,7 @@ As approach the beacon the same uneasy feeling starts creeping up by back, just 
 ~ InteractWithBeacon = true
 I switch on my exosuits comm interface, and connect it to the beacon. A power surge arcs and hits my life suport, leaving a nasty cloud of smoke and immediately triggering my suits toxicity warning.
 
-~ ExosuitAction = "ToxicityWarning"
+
 ~ ExosuitMessage = " WARNING: Unexpected traces of Pugneum detected. Initalising gas purge." 
 
   { ExosuitMessage }

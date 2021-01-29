@@ -10,5 +10,6 @@ Inky saves the json as a UTF-8-BOM file. Lua on windows does not like that. Solu
 
 # Credits
 We are using the following libraries :
+* [narrator](https://github.com/astrochili/narrator)
 * [json.lua](https://github.com/rxi/json.lua)
 * [inspect.lua](https://github.com/kikito/inspect.lua)
