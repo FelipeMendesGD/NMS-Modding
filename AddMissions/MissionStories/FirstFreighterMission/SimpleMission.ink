@@ -1,4 +1,68 @@
-VAR mission_name = "The crashed freighter"
+// Tags defined BEFORE the first knot are global and apply to this entire book
+// tages defined within a knot belong to that knot
+// all tags MUST have the following structure :
+// # tag_name: Some value that you want your tag to have
+// tag_name MUST NOT have spaces
+
+
+// the name of this mission
+# title: The crashed freighter
+
+//The subtitle of the mission
+# subtitle:  This is the mission subtitle
+
+//The entire description when you select the mission
+# description: This is the extended mission description
+
+// A short blurb of what you need to do
+# objective: Short mission objective
+
+// The hint at the bottom of a page of what to do
+# page_hint = ""
+
+
+//The icon that appears as a marker and in the menu
+// This will be either a set of preset things from the game, or a custom icon you make ourself
+# icon = SOME_ICON_ID
+
+// mision priority ( probbaly has to be set fixed, we will see)
+# priority: 4
+
+TODO
+// mission category // this should be figured out from existing assets
+
+//the starting knot. What is the opening stage of the mission?
+# starting_point = mission_pickup
+
+// mission class : Primary or Secondary - for the mission log on top / vs below
+# is_primary_mission:  true
+
+// mission is critical
+# is_critical: false
+
+TODO
+//Figure out how to link to langauge files
+
+TODO
+// Figure out the unique tyeps of scan events
+
+//For things that hae to happen for tory to pgroess, like externl conditions, we should
+
+//Items : 4 types of default items. Ëach of these types can be any of the ~2000 items in substance tables
+// https://docs.google.com/spreadsheets/d/1J8WdrubKgo8A9hPY-hbQLq4eVrb3n3lZAgiI2J7ncAU/edit#gid=66931870
+
+// for scan events that do item checks in inventory. 
+// Primary is condition  1 and secondary the second. In total you can have a check of two substances/products  
+// These have to be specified in the scan events.
+// "PrimarySubstances / "SecondarySubstances" = ""
+// "PrimaryProducts / "SecondaryProducts"
+
+//Specify being at a location
+// ScanEvent, with location ID. There is a table for the user to look up. 
+// BuildingType is avariable in scan event
+// <Property name="BuildingType" value="SpaceStation" />
+// <Property name="BuildingLocation" value="Nearest" />
+
 
 VAR ObjectNeeded = "SalvagedFrigateModule"
 VAR ObjectNeededIsInInventory = "false"
@@ -13,11 +77,16 @@ VAR ExosuitAction = ""
 VAR CommMessage = ""
 
 
+// General points 
+// ink VAR has to be treated as global constants
+// things that might change per know/mission stage must be tags.
+
 
 -> mission_pickup
 
 == mission_pickup ==
-{ mission_name }
+
+
 "The client is concerned with the suddent lack of communication from the Gek freighter they had contracted to deliver them a single item. You mission is to locate the freighter, identify the reason for loss of contact and bring back the item. 
 As the item is of personal nature, your discretion is essential. The client promises to reward you handsomely."
 
