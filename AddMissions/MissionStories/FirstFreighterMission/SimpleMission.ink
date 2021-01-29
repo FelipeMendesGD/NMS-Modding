@@ -3,9 +3,9 @@ VAR mission_name = "The crashed freighter"
 VAR ObjectNeeded = "SalvagedFrigateModule"
 VAR ObjectNeededIsInInventory = "false"
 
-VAR FlyingInSpace = true
-VAR HasPerformedScan = true
-VAR InteractWithBeacon = true
+VAR FlyingInSpace = false
+VAR HasPerformedScan = false
+VAR InteractWithBeacon = false
 VAR Reward = "nanites"
 
 VAR ExosuitMessage = ""
@@ -33,10 +33,22 @@ The mission agent shuffles nervously as I examine the mission details.
 
 
 == mission_start ==
+I should head out to space.
+#IsInSpace = true
+#HasPerformedAScan = true
+
+
+*   [Leave station] {~ FlyingInSpace = true}
+
+{ FlyingInSpace :
+-> space_encounter
+}
+
 -> space_encounter
 
-
 == space_encounter ==
+#ShipMessage "Coordinates recieved" 
+I recieve coordinates
 -> found_freighter
 
 == found_freighter ==
