@@ -40,6 +40,14 @@ TODO
 // mission is critical
 # is_critical: false
 
+TODO //things to think about
+//<Property name="AutoStart" value="None" />
+//<Property name="RestartOnCompletion" value="False" />
+//<Property name="CancelSetsComplete" value="False" />
+
+//dialogues
+
+
 TODO
 //Figure out how to link to langauge files
 
@@ -80,6 +88,12 @@ VAR CommMessage = ""
 // General points 
 // ink VAR has to be treated as global constants
 // things that might change per know/mission stage must be tags.
+
+// dialogue can only lead to two types of things :
+    // Another knot with a dialogue
+    // a entry from a RewardTable
+    
+    // <Property name="Costs" />
 
 
 -> mission_pickup
