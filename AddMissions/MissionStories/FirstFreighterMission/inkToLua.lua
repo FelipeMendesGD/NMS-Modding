@@ -13,9 +13,10 @@ local listMT = require('narrator.list.mt')
 
 -- Parse a book from the Ink file.
 --local book = narrator.parseFile('FirstFreighterMission.ink')
-local book = narrator.parseFile('SimpleMission.ink')
+local book = narrator.parseFile('SimpleMission.ink',{save = true})
 
-print(book)
+
+--[[
 -- Init a story from the book
 local story = narrator.initStory(book)
 
@@ -54,3 +55,4 @@ while story:canContinue() do
   -- Send answer to the story to generate new paragraphs
   story:choose(answer)
 end
+]]--
